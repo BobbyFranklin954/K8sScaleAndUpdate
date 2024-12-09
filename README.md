@@ -1,4 +1,4 @@
-# coding-project-template
+# Setting up containers in Docker
 
 Includes:
 
