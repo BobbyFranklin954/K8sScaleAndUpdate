@@ -12,17 +12,18 @@ spec:
         run: hello-world
     spec:
       containers:
-      - name: hello-world
-        image: us.icr.io/<my_namespace>/hello-world:1
-        ports:
-        - containerPort: 8080
-        resources:
-          limits:
-            cpu: 2m
-            memory: 30Mi
-          requests:
-            cpu: 1m
-            memory: 10Mi  
-        
+        - name: hello-world
+          image: hello-world:1
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            limits:
+              cpu: 1m
+              memory: 30Mi
+            requests:
+              cpu: 1m
+              memory: 30Mi
+
       imagePullSecrets:
-        - name: icr
+        - name: docker-reg-creds

@@ -12,12 +12,12 @@ spec:
         run: hello-world
     spec:
       containers:
-      - name: hello-world
-        image: us.icr.io/<my_namespace>/hello-world:3
-        ports:
-        - containerPort: 8080
-        envFrom:
-        - configMapRef:
-            name: app-config
+        - name: hello-world
+          image: hello-world:3
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: app-config
       imagePullSecrets:
-        - name: icr
+        - name: docker-reg-creds

@@ -21,21 +21,21 @@ spec:
         run: hello-world
     spec:
       containers:
-      - image: us.icr.io/<my_namespace>/hello-world:1
-        imagePullPolicy: Always
-        name: hello-world
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-        resources:
-          limits:
-            cpu: 2m
-            memory: 30Mi
-          requests:
-            cpu: 1m
-            memory: 10Mi   
+        - image: us.icr.io/sn-labs-bobby-franklin/hello-world:1
+          imagePullPolicy: Always
+          name: hello-world
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 2m
+              memory: 30Mi
+            requests:
+              cpu: 1m
+              memory: 10Mi
       imagePullSecrets:
-      - name: icr
+        - name: docker-reg-creds
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {}

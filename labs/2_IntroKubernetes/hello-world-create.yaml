@@ -4,9 +4,9 @@ metadata:
   name: hello-world
 spec:
   containers:
-  - name: hello-world
-    image: us.icr.io/<my_namespace>/hello-world:1
-    ports:
-    - containerPort: 8080
+    - name: hello-world
+      image: us.icr.io/sn-labs-bobby-franklin/hello-world:1
+      ports:
+        - containerPort: 8080
   imagePullSecrets:
-  - name: icr
+    - name: docker-reg-creds
